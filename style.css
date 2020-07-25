@@ -96,52 +96,72 @@ body {
   font-size: 1em;
   color: hsl(240, 38%, 20%);
   text-align: center;
-  background-image: url("/Users/macbook/FM-Landing-Page/images/pattern-curve.svg");
-  background-size:  contain;
-  background-position: bottom;
+  background-image: url("images/pattern-curve.svg");
+  background-size: auto;
+  background-position: bottom left;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h3 {
   font-size: 0.7em;
   color: hsl(240, 38%, 20%);
 }
-h4 {
+p span {
   font-size: 0.7em;
   color: hsl(240, 18%, 77%);
 }
 
 p {
-  background-image: url("/Users/macbook/FM-Landing-Page/images/pattern-quotes.svg");
-  background-size: 100px;
-  background-repeat: no-repeat;
-  background-position: top;
   font-size: 0.8em;
+  margin-top: 50px;
 }
 
 img {
   width: 85%;
+  margin-top: 35px;
+  box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1),
+    0 2px 30px 0px rgba(186, 186, 207, 0.1);
 }
 
 figure {
+  background-image: url("images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
   margin: 0;
 }
 
-footer {
 
-}
 
-footer .content-wrapper {
-
-}
 
 .attribution {
   font-size: 0.5em;
 }
 
 .content-wrapper {
-  width: 95%;
+  width: 90%;
   margin: 50px 0;
+}
+
+/* Testimonial */
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  flex-wrap: row wrap;
+}
+
+.testimonial h3,{
+  width: 10%;
+}
+
+.testimonial div p {
+  background-image: url("images/pattern-quotes.svg");
+  background-size: auto;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 
@@ -233,9 +253,87 @@ footer .content-wrapper {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 768px) {
+
+  /* Tablet styles here */
+
+.content-wrapper {
+  max-width: 640px;
+  margin: 50px 0;
 }
+
+
+p {
+  font-size: 0.7em;
+  position: absolute;
+  line-height: 1.9;
+  left: 0px;
+  width: 33%;
+  margin-left: 60px;
+  margin-top: 110px;
+}
+
+h3 {
+  font-size: 0.6em;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: 230px;
+  margin-right: 30px;
+  margin-left: 120px;
+}
+
+
+/* Testimonial */
+
+.testimonial article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row-reverse;
+}
+
+.testimonial article div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-right: 110px;
+  width: 10%;
+ }
+
+ .testimonial h3,{
+   width: 50%;
+ }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  /* Desktop styles */
+
+  .content-wrapper {
+    max-width: 960px;
+  }
+
+  p {
+    font-size: 1.0em;
+    line-height: 1.7;
+    left: 0px;
+    width: 33%;
+    margin-left: 160px;
+  }
+
+  h3 {
+    font-size: 0.9em;
+    margin-bottom: 250px;
+    margin-right: 200px;
+    margin-left: 170px;
+  }
+
+  .testimonial article div {
+    width: 30%;
+   }
 
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
