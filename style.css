@@ -15,12 +15,8 @@ html {
 
 body {
     background-color: var(--background-color);
-    background-image: url('images/pattern-curve.svg');
-    background-position: left bottom;
-    background-repeat: no-repeat;
+    background: url('images/pattern-curve.svg') bottom left no-repeat fixed;
     background-size: contain;
-    height: 100vh;
-
 }
 
 .testimonial {
@@ -29,7 +25,7 @@ body {
 
 .test-photo {
     background-image: url('images/pattern-bg.svg');
-    background-position: center;
+    background-position: bottom right;
     background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
@@ -122,7 +118,7 @@ body {
     font-weight: 500;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
     body {
         background-size: 35%;
     }

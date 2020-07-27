@@ -24,7 +24,7 @@ const testimonialSwap = (slideTo) => {
     } else {
         data = quote0;
     }
-    const testimonialPhoto = document.getElementById('test-photo');
+    const testimonialPhoto = document.getElementById('test-photo-swap');
     testimonialPhoto.classList.add('fadeIn');
     testimonialPhoto.src = data.photo;
     testimonialPhoto.alt = data.alt;
