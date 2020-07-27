@@ -1,418 +1,191 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+:root {
 
-/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+    /* colors */
+    --background-color: #fff;
+    --dark-blue: hsl(240, 38%, 20%);
+    --gray-blue: hsl(240, 18%, 77%);
+}
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+* { box-sizing: border-box; }
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-html {
-  font-size: 32px;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: 1em;
-  color: hsl(240, 38%, 20%);
-  text-align: center;
-  background-image: url("images/pattern-curve.svg");
-  background-size: auto;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    background-color: var(--background-color);
+    background-image: url('images/pattern-curve.svg');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+
 }
-
-h3 {
-  font-size: 0.7em;
-  color: hsl(240, 38%, 20%);
-}
-p span {
-  font-size: 0.7em;
-  color: hsl(240, 18%, 77%);
-}
-
-p {
-  font-size: 0.8em;
-  margin-top: 50px;
-}
-
-img {
-  width: 85%;
-  margin-top: 35px;
-  box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1),
-    0 2px 30px 0px rgba(186, 186, 207, 0.1);
-}
-
-figure {
-  background-image: url("images/pattern-bg.svg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  margin: 0;
-}
-
-
-
-
-.attribution {
-  font-size: 0.5em;
-}
-
-.content-wrapper {
-  width: 90%;
-  margin: 50px 0;
-}
-
-/* Testimonial */
 
 .testimonial {
-  display: flex;
-  justify-content: center;
-  flex-wrap: row wrap;
+    margin: 5%;
 }
 
-.testimonial h3,{
-  width: 10%;
+.test-photo {
+    background-image: url('images/pattern-bg.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
-.testimonial div p {
-  background-image: url("images/pattern-quotes.svg");
-  background-size: auto;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: top;
+.test-photo-img {
+    border-radius: 5px;
+    box-shadow: -62px 38px 45px -44px rgba(207,205,207, 1);
+    height: auto;
+    margin: 35px auto 0 auto;
+    max-width: 255px;
 }
 
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.fadeIn {
+    animation: fadeInAnimation ease-in 300ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.test-buttons {
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    margin: -15px auto 0 auto;
+    z-index: 1;
+    padding: 10px 15px;
+    position: relative;
+    box-shadow: -54px 46px 56px -30px rgba(0,0,0,0.48);
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.test-buttons-container {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
+.test-buttons-cont-img {
+    width: 10px;
 }
 
-.clearfix::after {
-  clear: both;
+.test-quote {
+    background-image: url('images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center top;
+    margin-top: 35px;
+    text-align: center;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+.test-quote-text {
+    color: var(--dark-blue);
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 25px auto 0 auto;
+    max-width: 290px;
+    padding-top: 15px;
+    text-align: center;
+}
 
-@media only screen and (min-width: 768px) {
-
-  /* Tablet styles here */
-
-.content-wrapper {
-  max-width: 640px;
-  margin: 50px 0;
+.test-quote-attr {
+    display: flex;
+    flex-direction: column;
+    color: var(--dark-blue);
+    margin-top: 30px;
+    text-align: center;
 }
 
 
-p {
-  font-size: 0.7em;
-  position: absolute;
-  line-height: 1.9;
-  left: 0px;
-  width: 33%;
-  margin-left: 60px;
-  margin-top: 110px;
+.test-quote-attr-name {
+    color: var(--dark-blue);
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-h3 {
-  font-size: 0.6em;
-  position: absolute;
-  bottom: 0px;
-  margin-bottom: 230px;
-  margin-right: 30px;
-  margin-left: 120px;
+.test-quote-attr-title {
+    color: var(--gray-blue);
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
+@media (min-width: 800px) {
+    body {
+        background-size: 35%;
+    }
 
-/* Testimonial */
+    .testimonial {
+        align-items: center;
+        display: flex;
+        max-width: 1250px;
+        margin: 0 auto;
+        padding: 5%;
+    }
 
-.testimonial article {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-flow: row-reverse;
-}
+    .test-quote {
+        background-position: 75px top;
+        background-size: 100px;
+        margin-top: unset;
+        order: 1;
+        text-align: left;
+        z-index: 2;
+    }
 
-.testimonial article div {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-flow: row wrap;
-  margin-right: 110px;
-  width: 10%;
- }
+    .test-quote-text {
+        font-size: 2.7rem;
+        line-height: 1.5;
+        margin: 0;
+        margin-top: 38px;
+        max-width: 590px;
+        text-align: left;
+    }
 
- .testimonial h3,{
-   width: 50%;
- }
+    .test-quote-attr {
+        display: block;
+        text-align: left;
+    }
 
+    .test-photo {
+        order: 2;
+        margin-left: -125px;
+        padding: 75px;
+    }
+    .test-photo-img {
+        max-width: 540px;
+        width: 100%;
+    }
 
-}
+    .test-quote-attr-title {
+        color: var(--gray-blue);
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
 
-@media screen and (min-width: 1440px) {
+    .test-quote-attr-name {
+        color: var(--dark-blue);
+        font-size: 2rem;
+        font-weight: 700;
+    }
 
-  /* Desktop styles */
+    .test-buttons-cont-img {
+        width: 13px;
+    }
 
-  .content-wrapper {
-    max-width: 960px;
-  }
-
-  p {
-    font-size: 1.0em;
-    line-height: 1.7;
-    left: 0px;
-    width: 33%;
-    margin-left: 160px;
-  }
-
-  h3 {
-    font-size: 0.9em;
-    margin-bottom: 250px;
-    margin-right: 200px;
-    margin-left: 170px;
-  }
-
-  .testimonial article div {
-    width: 30%;
-   }
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+    .test-buttons {
+        width: 90px;
+        margin: -21px 0 0 60px;
+    }
 }
